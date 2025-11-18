@@ -1,14 +1,5 @@
- /*
-
- <div id="parent">
-  <div id="child">
-    <h1 id="heading">This heading is done by h1 tag</h1>
-  </div>
-</div>
-
-
-
- */
+import React from "react";
+import ReactDOM from "react-dom/client";
  
  
  const heading = React.createElement("div",{id: "parent"},
