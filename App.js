@@ -58,7 +58,7 @@ const Body = () =>{
              <RestaurantCard/>
              <RestaurantCard/>
              <RestaurantCard/>
-             
+
 
         </div>
         
@@ -68,6 +68,22 @@ const Body = () =>{
 
    
 };
+const Footer=()=>{
+
+    return (
+        <div className="footer">
+            <div className="footer-list">Get to Know Us</div>
+            <div className="footer-list">Terms of Service</div>
+            <div className="footer-list">Privacy</div>
+            <div className="footer-list">@CopyRight</div>
+
+
+        </div>
+        
+
+
+    )
+};
 
 const AppLevel = ()=>{
 
@@ -75,6 +91,7 @@ const AppLevel = ()=>{
         <div>
             <Header/>
             <Body/>
+            <Footer/>
             
         </div>
 
