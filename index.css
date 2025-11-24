@@ -25,10 +25,15 @@
 
 .restaurant-card{
     display:flex;
-    border: 1px solid bisque;
+    
     flex-wrap: wrap;
     height: 300px;
     width: 250px;  
+
+}
+.restaurant-card:hover{
+    border: 1px solid goldenrod;
+    cursor: pointer;
 
 }
 .card-image img{
