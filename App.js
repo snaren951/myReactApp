@@ -1,32 +1,85 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
- 
- /*
- const heading = React.createElement("div",{id: "parent"},
-                    React.createElement("div",{id: "child"},
-                        [React.createElement("h1",{id: "heading1"}, "This heading is done by h1 tag"),
-                         React.createElement("h2",{id: "heading2"}, "This heading is done by h2 tag")]));
-*/
 
-const elem1 = <h2>React JSX Element</h2>;
-const elem2 =<span> {elem1} </span>;
 
-const Title = ()=> (<div className="head" tabIndex="5">
-    <h1>Title JSX Element</h1>
-    {elem2}
-    </div>);
 
-const Jsxheading = ()=>  (
-    <div>
-         {Title()}
 
-        <h1 id="parent">Namaste React by JSX</h1>
-
+const Header=()=>(
+    <div className="heading-bar">
+        <img className="logo-image" src="https://marketplace.canva.com/EAFaFUz4aKo/3/0/1600w/canva-yellow-abstract-cooking-fire-free-logo-tn1zF-_cG9c.jpg" alt="Pizza"/>
+        <ul className="nav-menu">
+            <li>Home</li>
+            <li>Cart</li>
+            <li>About</li>
+            <li>Support</li>
+        </ul>
     </div>
-    
-       
-   
-    );
+);
+const RestaurantCard= function(){
+    return (
+    <div className="restaurant-card">
 
- const root = ReactDOM.createRoot(document.getElementById("root"));
- root.render(<Jsxheading/>);
+        <div className="card-image">
+            <img  src="https://images.food52.com/VOfOuvcQe7fBeSqixNe1L-LhUBY=/d815e816-4664-472e-990b-d880be41499f--chicken-biryani-recipe.jpg" alt="Food"/>
+
+        </div>
+        <div className="food-details">
+            <ul >
+                <li>Biryani House</li>
+                <li>Biryanis, Curries and Desserts</li>
+                <li>4.9</li>
+                <li>30 mins</li>
+            </ul>
+
+        </div>
+        
+       
+        
+    </div>)
+
+};
+
+const Body = () =>{
+    return (
+    <div className="body-container">
+        <div className="search-box">
+            Search
+
+        </div>
+        <div className="rest-cards">
+             <RestaurantCard/>
+             <RestaurantCard/>
+             <RestaurantCard/>
+             <RestaurantCard/>
+             <RestaurantCard/>
+             <RestaurantCard/>
+             <RestaurantCard/>
+             <RestaurantCard/>
+             <RestaurantCard/>
+             <RestaurantCard/>
+             <RestaurantCard/>
+             
+
+        </div>
+        
+       
+       
+    </div>)
+
+   
+};
+
+const AppLevel = ()=>{
+
+    return (
+        <div>
+            <Header/>
+            <Body/>
+            
+        </div>
+
+    )
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<AppLevel/>);
