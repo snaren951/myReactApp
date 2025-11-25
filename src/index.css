@@ -51,11 +51,11 @@
    
     
 }
-.search-box{
+.filter-btn{
     display:flex;
     justify-content: center;
-    align-items: center;
-    margin:50px;
+    margin:10px;
+    cursor: pointer;
 
 }
 .rest-cards{
