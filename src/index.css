@@ -25,10 +25,9 @@
 
 .restaurant-card{
     display:flex;
-    
     flex-wrap: wrap;
-    height: 300px;
     width: 250px;  
+   
 
 }
 .restaurant-card:hover{
@@ -45,11 +44,7 @@
    
 }
 .food-details li{
-    list-style: none;
-    
-    
-   
-    
+    list-style: none;   
 }
 .filter-btn{
     display:flex;
@@ -58,12 +53,30 @@
     cursor: pointer;
 
 }
-.rest-cards{
+.rest-cards {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
     gap:20px;
 }
+
+.shimmer-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.shimmerbox{
+    background-color:#f4f4f4;
+    border:1px dotted white;
+    height:300px;
+    width:250px;
+    margin-top: 30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .footer{
     background-color: mediumaquamarine;
