@@ -5,14 +5,10 @@
     padding:10px;
     border: 1px solid grey;
     background-color:aquamarine;
+    height:70px;
     
 }   
-.logo-image{
 
-    width: 8%;
-    height: 8%;
-    
-}
 
 .nav-menu{
     display: flex;  
@@ -49,6 +45,7 @@
 .filter-btn{
     display:flex;
     justify-content: center;
+    gap:20px;
     margin:10px;
     cursor: pointer;
 
@@ -65,6 +62,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+    gap:20px;
 }
 .shimmerbox{
     background-color:#f4f4f4;
@@ -75,6 +73,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    opacity: 0.5;
 }
 
 
@@ -88,4 +87,23 @@
     border: 1px solid grey;
     
 }
+.login-btn{
+    color: blue;
+    cursor: pointer;
+    border: 1px solid rgb(153, 136, 136);
+   
 
+}
+
+.searchbar{
+    display:flex;
+    justify-content: center;
+    gap:10px;
+    margin: 20px;
+    min-width: 400px;
+
+}
+.searchbtn{
+    cursor: pointer;
+    color:blue;
+}
