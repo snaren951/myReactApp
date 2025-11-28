@@ -13,6 +13,7 @@ const Header=()=>{
             <li>Home</li>
             <li>Cart</li>
             <li>About</li>
+            <li>Contact Us</li>
             <li><button className="login-btn" onClick={
                 ()=>{
                     console.log("button clicked");
