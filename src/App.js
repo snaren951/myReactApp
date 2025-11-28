@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 
 
 
@@ -15,21 +15,31 @@ const AppLevel = ()=>{
     return (
         <div>
             <Header/>
-            <Body/>
+            <Outlet/>
             <Footer/>
+            
+           
             
         </div>
 
     )
 };
 
+
+
+
+
 const appRouter = createBrowserRouter([
     {
         path:"/",
         element:<AppLevel/>,
-        errorElement:<Error/>
+        children:[
+             {
+         path:"/",
+        element:<Body/>
+
     },
-    {
+            {
          path:"/about",
         element:<About/>
 
@@ -39,6 +49,12 @@ const appRouter = createBrowserRouter([
          path:"/contact",
         element:<Contact/>
     }
+
+        ],
+
+        errorElement:<Error/>
+    }
+    
 ]);
 
 

@@ -10,6 +10,7 @@
 }   
 
 
+
 .nav-menu{
     display: flex;  
     
@@ -77,6 +78,7 @@
 }
 
 
+
 .footer{
     background-color: mediumaquamarine;
     display:flex;
@@ -85,6 +87,7 @@
     height: 80px;
     margin-top: 20px;
     border: 1px solid grey;
+   
     
 }
 .login-btn{
@@ -106,4 +109,10 @@
 .searchbtn{
     cursor: pointer;
     color:blue;
+}
+.contacts, .about {
+    min-height: 100vh;
+    
+   
+
 }
