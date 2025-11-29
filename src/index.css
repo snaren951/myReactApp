@@ -5,7 +5,7 @@
     padding:10px;
     border: 1px solid grey;
     background-color:aquamarine;
-    height:70px;
+    height:10vh;
     
 }   
 
@@ -110,9 +110,7 @@
     cursor: pointer;
     color:blue;
 }
-.contacts, .about {
-    min-height: 100vh;
-    
-   
+.contacts, .about, .restaurant-menu{
+    min-height: 70vh;
 
 }

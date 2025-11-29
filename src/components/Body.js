@@ -2,6 +2,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { ShimmerUI } from "./ShimmerUI";
+import { Link } from "react-router";
 
 
 
@@ -17,8 +18,8 @@ const Body = () =>{
    
     async function fetchData(){
        console.log("use Effect called");
-
-        const response = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/search/v3?lat=12.9352403&lng=77.624532&str=Indian&trackingId=null&submitAction=SUGGESTION&queryUniqueId=361e7009-063a-3dbd-c2aa-3e60fc313551&metaData=%7B%22type%22%3A%22CUISINE%22%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Cuisine%22%7D");
+      
+        const response = await fetch("https://www.swiggy.com/dapi/restaurants/search/v3?lat=12.9352403&lng=77.624532&str=Indian&trackingId=null&submitAction=SUGGESTION&queryUniqueId=361e7009-063a-3dbd-c2aa-3e60fc313551&metaData=%7B%22type%22%3A%22CUISINE%22%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Cuisine%22%7D");
         const data = await response.json();
         const cards =data?.data?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards;
         //console.log(cards);
@@ -86,7 +87,7 @@ const Body = () =>{
         </div>
         <div className="rest-cards">
             {
-                filterRest.map(restaurant=><RestaurantCard key={restaurant.card.card.info.id} resDetails={restaurant}/>)
+                filterRest.map(restaurant=><Link to={"/restaurant/123456"} key={restaurant.card.card.info.id}><RestaurantCard resDetails={restaurant}/></Link>)
 
 
             }
