@@ -1,3 +1,4 @@
+import UserClass from "./UserClass";
 const Contact = ()=>{
     return (
         <div className="contacts">
@@ -6,6 +7,7 @@ const Contact = ()=>{
             <div>
                 <p>Road #1, Seven Hills, San Mateo, CA</p>
             </div>
+            <UserClass name={"ABC Corporation"} contact={"123-395-5678"}/>
         </div>
     )
 }
