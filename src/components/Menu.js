@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
-import { MENU_URL } from "../utils/constants";
+
+
 import { ShimmerUI } from "./ShimmerUI";
 import { useParams } from "react-router";
+import useMenu from "../utils/useMenu";
 
 
 const Menu = ()=>{
@@ -9,28 +10,11 @@ const Menu = ()=>{
     const params = useParams();
     
     const {resId}=params;
-    const [resInfo, setResInfo]=useState(null);
-
-useEffect(()=>{
-    
-    fetchMenuInfo();
-    
-
-},[]);
-
-
-const fetchMenuInfo=async ()=> {
-
-    console.log("Inside the function");
-       
-    const response = await fetch("https://namastedev.com/api/v1/listRestaurantMenu/"+resId);
    
-    const json = await response.json();
-    console.log(json.data);
-   setResInfo(json.data);
-   
-    //console.log(name, costForTwoMessage);
-}
+//calling the custom hook
+    const resInfo = useMenu(resId);
+
+
 
 if (resInfo===null){
     return <ShimmerUI/>
