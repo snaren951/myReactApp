@@ -1,17 +1,22 @@
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import About from "./components/About";
-import Contact from "./components/Contact";
+//import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Menu from "./components/Menu";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 
+const Contact = lazy(()=> import("./components/Contact"));
+
+
+
 
 
 const AppLevel = ()=>{
+
 
     return (
         <div>
@@ -25,6 +30,7 @@ const AppLevel = ()=>{
 
     )
 };
+
 
 
 
@@ -48,7 +54,9 @@ const appRouter = createBrowserRouter([
 
     {
          path:"/contact",
-        element:<Contact/>
+        element:(<Suspense fallback={<h1>loading...</h1>}>
+            <Contact/>
+        </Suspense>)
     },
      {
          path:"/restaurant/:resId",
