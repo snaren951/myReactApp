@@ -85,7 +85,8 @@ const Body = () =>{
 
             }>Search</button>
         </div>
-        <div className="rest-cards">
+       <div>
+         <div className="flex flex-wrap px-4 justify-start">
             {
                 filterRest.map(restaurant=><Link to={"/restaurant/123456"} key={restaurant.card.card.info.id}><RestaurantCard resDetails={restaurant}/></Link>)
 
@@ -96,6 +97,7 @@ const Body = () =>{
 
     
         </div>
+       </div>
         
        
        

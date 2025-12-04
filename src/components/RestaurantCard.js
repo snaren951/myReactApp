@@ -10,15 +10,15 @@ const RestaurantCard= function(props){
 
     
     return (
-    <div className="restaurant-card">
+    <div className="bg-red-50 h-90 w-60 rounded-3xl m-3 hover:bg-red-200">
 
-        <div className="card-image">
-            <img  src={FOOD_IMG+resDetails.card.card.info.cloudinaryImageId} alt="Food"/>
+        <div>
+            <img className="rounded-2xl" src={FOOD_IMG+resDetails.card.card.info.cloudinaryImageId} alt="Food"/>
 
         </div>
         <div className="food-details">
             <ul >
-                <li>{name}</li>
+                <li className="font-semibold">{name}</li>
                 <li>{avgRating}</li>
                 <li>{costForTwoMessage}</li>
             </ul>

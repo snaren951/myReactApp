@@ -12,15 +12,15 @@ const Header=()=>{
     return (
    
    
-    <div className="heading-bar">
-        <img className="logo-image" src={LOGO_IMG} alt="Pizza"/>
-        <ul className="nav-menu">
-            <li> Status: {onlineState? "✅":"🔴"}</li>
-            <li><Link to="/">Home</Link></li>
-            <li>Cart</li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact Us</Link></li>
-            <li><button className="login-btn" onClick={
+    <div className="flex justify-between items-center border border-black-400 bg-red-300">
+        <img className="w-35" src={LOGO_IMG} alt="Pizza"/>
+        <ul className="flex">
+            <li className="px-4"> Status: {onlineState? "✅":"🔴"}</li>
+            <li className="px-4"><Link to="/">Home</Link></li>
+            <li className="px-4">Cart</li>
+            <li className="px-4"><Link to="/about">About</Link></li>
+            <li className="px-4"><Link to="/contact">Contact Us</Link></li>
+            <li className="px-4"><button className="login-btn" onClick={
                 ()=>{
                     console.log("button clicked");
                      loginBtn==="Login"? setLoginBtn("Logout"):setLoginBtn("Login");
