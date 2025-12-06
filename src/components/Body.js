@@ -1,5 +1,5 @@
 
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {EnhancedRestaurantCard} from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { ShimmerUI } from "./ShimmerUI";
 import { Link } from "react-router";
@@ -14,6 +14,8 @@ const Body = () =>{
     const [searchText, setSearchText]=useState('');
    
     console.log("Body rendered again");
+
+    const CardwithLabel = EnhancedRestaurantCard(RestaurantCard);
 
    
     async function fetchData(){
@@ -34,16 +36,19 @@ const Body = () =>{
 
     },[]);
     
-    //console.log("Body rendering");
+   
 
     if (newStores.length===0){
         return <ShimmerUI/>
     }
 
     return (
-    <div className="body-container">
-        <div className="filter-btn">
-            <button className="filter-top" onClick={function(){
+    <div className="m-5 ">
+        <div className="flex justify-start gap-10 flex-wrap" >
+
+            <div className="flex gap-10">
+
+                <button className="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full" onClick={function(){
             console.log("button Clicked");
             const filteredStores= newStores.filter(function(store){
                 return store.card.card.info.avgRating>4.5;
@@ -53,20 +58,20 @@ const Body = () =>{
             
             }}>
             Top Rated Restaurants
-        </button>
-        <button className="filter-family">Family Restarurants</button>
+                </button>
+                <button className="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full">Family Restarurants</button>
 
-        </div>
+            </div>
         
-        <div className="searchbar"> 
-            <input type="text" className="inputbox" value={searchText} onChange={
+            <div className="flex justify-center gap-1"> 
+                <input className="w-60 px-2 border border-red-500 text-xl text-gray-700 rounded-full" type="text" value={searchText} onChange={
                 (e)=>{
                     setSearchText(e.target.value);
                     
 
                 }
-            }></input>
-            <button className="searchbtn" onClick={function(){
+                }></input>
+                <button className="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full" onClick={function(){
 
                 
                
@@ -80,15 +85,23 @@ const Body = () =>{
                  setFilterRest(filteredList);
 
 
-            }
+                }
                
 
-            }>Search</button>
+                }>Search</button>
+             </div>
+
+
         </div>
+      
        <div>
-         <div className="flex flex-wrap px-4 justify-start">
+         <div className="flex flex-wrap px-4 justify-start mt-4">
             {
-                filterRest.map(restaurant=><Link to={"/restaurant/123456"} key={restaurant.card.card.info.id}><RestaurantCard resDetails={restaurant}/></Link>)
+                filterRest.map(
+                    restaurant=><
+                        Link to={"/restaurant/123456"} key={restaurant.card.card.info.id}>
+                        {restaurant.card.card.info.promoted?<CardwithLabel resDetails={restaurant}/>:<RestaurantCard resDetails={restaurant}/>}
+                        </Link>)
 
 
             }

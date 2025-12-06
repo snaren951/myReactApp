@@ -1,22 +1,22 @@
 export const ShimmerUI = ()=>{
 
     return (
-        <div className="shimmer-container">
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
-            <div className="shimmerbox"></div>
+        <div className="flex flex-wrap">
+            <div className="bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className="bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className="bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className="bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className="bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className="bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className="bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className="bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className="bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className=" bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className=" bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className=" bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className=" bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className=" bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
+            <div className=" bg-gray-50 h-90 w-60 rounded-3xl m-3"></div>
 
         </div>
     )

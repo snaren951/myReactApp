@@ -4,7 +4,7 @@ import { FOOD_IMG } from "../utils/constants";
 const RestaurantCard= function(props){
 
     const {resDetails}=props;
-   // console.log(resDetails);
+   console.log(resDetails);
     const {name,avgRating,costForTwoMessage}=resDetails.card.card.info;
 
 
@@ -30,5 +30,20 @@ const RestaurantCard= function(props){
     </div>)
 
 };
+
+export const EnhancedRestaurantCard=(RestaurantCard)=>{
+
+    return (props)=>{
+
+        return (
+            <div>
+                <label className="flex justify-start absolute bg-green-400 p-1 m-3 rounded-full text-white">Promoted</label>
+                <RestaurantCard {...props}/>
+            </div>
+        )
+    }
+
+
+}
 
 export default RestaurantCard;

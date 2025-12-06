@@ -3,6 +3,7 @@
 import { ShimmerUI } from "./ShimmerUI";
 import { useParams } from "react-router";
 import useMenu from "../utils/useMenu";
+import ItemCategory from "./ItemCategory";
 
 
 const Menu = ()=>{
@@ -27,41 +28,32 @@ const {cards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR;
 const dataCards = cards?.filter((card)=>{
     return card?.card
 })
+//console.log("Data cardds is below");
 //console.log(dataCards);
+//dataCard.card?.card?.title
+//item.card.info.name
+// dataCard.card.card.itemCards
+
+
 
 
 
 
     return (
-        <div className="restaurant-menu">
+        <div className="font-serif text-center mt-3 min-h-120">
 
-            <h2>{name}</h2>
-            <h3>{avgRating}</h3>
-            <h3>{costForTwoMessage}</h3> 
+            <h2 className=" text-2xl text-gray-700 font-semibold">{name}</h2>
+            <h3 className="font-semibold text-gray-700 ">{avgRating}</h3>
+            <h3 className="font-semibold text-gray-700 ">{costForTwoMessage}</h3> 
             <br></br>
-            
-                {
-                dataCards.map(dataCard=>(
-                <div key={dataCard.card?.card?.title}>
 
-                    <h4 >{dataCard.card?.card?.title}</h4>
-                    <ul>
-                        {
-                            dataCard.card.card.itemCards.map(item=>(<li key={item.card.info.id}> {item.card.info.name} - {"Rs "+item.card.info.price/100}</li>))
-                        }
+            {
 
-                    </ul>
-                </div>
-            
-            ))
-               
-
+                dataCards.map((dataCard)=>(<ItemCategory key={dataCard.card.card.title} categories={dataCard}/>))
             }
 
-           
+          
             
-            
-        
         </div>
     )
 }
