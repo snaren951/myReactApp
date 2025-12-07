@@ -2,16 +2,16 @@ import { useEffect } from "react";
 
 
 const ItemList = ({data})=> {
-    console.log("Item Data is as follows");
+   // console.log("Item Data is as follows");
     //console.log(data);
     const {itemCards}=data?.card?.card
-    console.log(itemCards);
+    //console.log(itemCards);
 
-useEffect(()=>{
-    console.log("Calling windows scroll");
-    window.scrollTo(0,0);
+    // useEffect(()=>{
+    //     console.log("Calling windows scroll");
+    //     window.scrollTo(0,0);
 
-},[]);
+    // },[]);
 
     return (
         <div >

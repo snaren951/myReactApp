@@ -8,6 +8,7 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Menu from "./components/Menu";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
+import DummyImage from "./components/DummyImage";
 
 const Contact = lazy(()=> import("./components/Contact"));
 
@@ -54,7 +55,7 @@ const appRouter = createBrowserRouter([
 
     {
          path:"/contact",
-        element:(<Suspense fallback={<h1>loading...</h1>}>
+        element:(<Suspense fallback={<DummyImage/>}>
             <Contact/>
         </Suspense>)
     },

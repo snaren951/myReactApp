@@ -99,7 +99,7 @@ const Body = () =>{
             {
                 filterRest.map(
                     restaurant=><
-                        Link to={"/restaurant/123456"} key={restaurant.card.card.info.id}>
+                        Link to={"/restaurant/567890"} key={restaurant.card.card.info.id}>
                         {restaurant.card.card.info.promoted?<CardwithLabel resDetails={restaurant}/>:<RestaurantCard resDetails={restaurant}/>}
                         </Link>)
 

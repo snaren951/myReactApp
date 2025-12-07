@@ -4,6 +4,7 @@ import { ShimmerUI } from "./ShimmerUI";
 import { useParams } from "react-router";
 import useMenu from "../utils/useMenu";
 import ItemCategory from "./ItemCategory";
+import { useState } from "react";
 
 
 const Menu = ()=>{
@@ -11,6 +12,7 @@ const Menu = ()=>{
     const params = useParams();
     
     const {resId}=params;
+    const [expandList, setExpandList] = useState(0);
    
 //calling the custom hook
     const resInfo = useMenu(resId);
@@ -49,7 +51,10 @@ const dataCards = cards?.filter((card)=>{
 
             {
 
-                dataCards.map((dataCard)=>(<ItemCategory key={dataCard.card.card.title} categories={dataCard}/>))
+                dataCards.map(
+                    (dataCard, index)=>(
+                    <ItemCategory key={dataCard.card.card.title} categories={dataCard} expand={index===expandList?true:false} setExpandList={()=>setExpandList(index)}/>
+                ))
             }
 
           

@@ -7,7 +7,7 @@ const Header=()=>{
     const [loginBtn,setLoginBtn]=useState("Login");
 
     const onlineState= useOnlineStatus();
-    console.log(onlineState);
+    //console.log(onlineState);
     
     return (
    
