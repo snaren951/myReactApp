@@ -1,18 +1,19 @@
+import React from "react";
 
-import { useState } from "react";
 import ItemList from "./ItemList";
-const ItemCategory = ({categories, expand, setExpandList})=>{
+const ItemCategory = ({categories, expand,handleToggle,index})=>{
 
-    const [toggleList, setToggleList] = useState(expand);
+    
    
     console.log("Item Categories re-rendering");
 
-    const togglebar = ()=>{
-        setToggleList(!toggleList);
-        setExpandList();
+    const handler = ()=>{
+        handleToggle(prev=>prev===index?null:index);
+
 
     }
-    
+
+ 
 
    
 
@@ -21,12 +22,12 @@ const ItemCategory = ({categories, expand, setExpandList})=>{
             
                 
                     <div className=" font-serif mt-2 border-b-6 border-gray-200 last:border-none" >
-                        <div className="flex justify-between shadow-xl mb-2" onClick={togglebar}>
+                        <div className="flex justify-between shadow-xl mb-2" onClick={handler}>
                             <div className="font-serif font-semibold text-gray-700 pr-2 mb-4 pl-1" >{categories.card?.card?.title+" ("+categories?.card?.card?.itemCards.length+")"}</div>
-                            <div className="text-gray-700 text-3xl">{expand && toggleList?"⊖":"⊕"}</div>
+                            <div className="text-gray-700 text-3xl">{expand ?"⊖":"⊕"}</div>
                             
                         </div>
-                        { expand && toggleList && <ItemList data={categories}/>}
+                        { expand  && <ItemList data={categories}/>}
 
                     </div>
         </div>
@@ -36,4 +37,4 @@ const ItemCategory = ({categories, expand, setExpandList})=>{
     )
 }
 
-export default ItemCategory;
+export default React.memo(ItemCategory);

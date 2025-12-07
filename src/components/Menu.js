@@ -53,7 +53,7 @@ const dataCards = cards?.filter((card)=>{
 
                 dataCards.map(
                     (dataCard, index)=>(
-                    <ItemCategory key={dataCard.card.card.title} categories={dataCard} expand={index===expandList?true:false} setExpandList={()=>setExpandList(index)}/>
+                    <ItemCategory key={dataCard.card.card.title} categories={dataCard} expand={index===expandList} index={index} handleToggle={setExpandList}/>
                 ))
             }
 
