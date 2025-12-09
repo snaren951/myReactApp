@@ -1,13 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import  LOGO_IMG  from "../utils/constants";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import loginUser from "../utils/UserContext";
+import { useContext } from "react";
 
 const Header=()=>{
     const [loginBtn,setLoginBtn]=useState("Login");
 
     const onlineState= useOnlineStatus();
     //console.log(onlineState);
+
+    const {loginName} = useContext(loginUser);
+    //console.log(loginName);
+    console.log("Header Render");
+
+
+   
+
+
+
+
     
     return (
    
@@ -27,6 +40,7 @@ const Header=()=>{
                     
                 }
             }>{loginBtn}</button></li>
+            <li className="px-4 font-semibold">UserName: {loginName}</li>
         </ul>
     </div>
 )};

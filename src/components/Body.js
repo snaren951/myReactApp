@@ -3,6 +3,8 @@ import RestaurantCard, {EnhancedRestaurantCard} from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import { ShimmerUI } from "./ShimmerUI";
 import { Link } from "react-router";
+import LoginUser from "../utils/UserContext";
+import { useContext } from "react";
 
 
 
@@ -12,8 +14,13 @@ const Body = () =>{
     const [newStores,setNewStores]=useState([]);
     const [filterRest, setFilterRest]=useState([]);
     const [searchText, setSearchText]=useState('');
+
    
-    console.log("Body rendered again");
+    const {loginName, setUserName} = useContext(LoginUser);
+
+
+   
+    console.log("Body rendered");
 
     const CardwithLabel = EnhancedRestaurantCard(RestaurantCard);
 
@@ -49,7 +56,7 @@ const Body = () =>{
             <div className="flex gap-10">
 
                 <button className="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-full" onClick={function(){
-            console.log("button Clicked");
+           // console.log("button Clicked");
             const filteredStores= newStores.filter(function(store){
                 return store.card.card.info.avgRating>4.5;
             });
@@ -90,26 +97,31 @@ const Body = () =>{
 
                 }>Search</button>
              </div>
+             <div>
+                 <input className="w-60 px-2 border border-red-500 text-xl text-gray-700 rounded-full" type="text" value={loginName} onChange={(e)=>setUserName(e.target.value)}></input>
+             </div>
 
 
         </div>
       
        <div>
-         <div className="flex flex-wrap px-4 justify-start mt-4">
-            {
-                filterRest.map(
-                    restaurant=><
-                        Link to={"/restaurant/567890"} key={restaurant.card.card.info.id}>
-                        {restaurant.card.card.info.promoted?<CardwithLabel resDetails={restaurant}/>:<RestaurantCard resDetails={restaurant}/>}
-                        </Link>)
+       
+            <div className="flex flex-wrap px-4 justify-start mt-4">
+                {
+                    filterRest.map(
+                        restaurant=><
+                            Link to={"/restaurant/567890"} key={restaurant.card.card.info.id}>
+                            {restaurant.card.card.info.promoted?<CardwithLabel resDetails={restaurant}/>:<RestaurantCard resDetails={restaurant}/>}
+                            </Link>)
 
 
-            }
+                }
            
         
 
     
-        </div>
+            </div>
+       
        </div>
         
        

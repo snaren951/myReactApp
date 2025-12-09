@@ -1,13 +1,19 @@
 
 import { FOOD_IMG } from "../utils/constants";
 
+import { useContext } from "react";
+import loginUser from "../utils/UserContext";
+
 const RestaurantCard= function(props){
 
+
+      console.log("Restaurant card Render");
+
     const {resDetails}=props;
-   console.log(resDetails);
+  // console.log(resDetails);
     const {name,avgRating,costForTwoMessage}=resDetails.card.card.info;
 
-
+const {loginName} = useContext(loginUser);
     
     return (
     <div className="bg-red-50 h-90 w-60 rounded-3xl m-3 hover:bg-red-200">
@@ -16,14 +22,19 @@ const RestaurantCard= function(props){
             <img className="rounded-2xl" src={FOOD_IMG+resDetails.card.card.info.cloudinaryImageId} alt="Food"/>
 
         </div>
+       
+
+        
         <div className="food-details">
             <ul >
                 <li className="font-semibold">{name}</li>
                 <li>{avgRating}</li>
                 <li>{costForTwoMessage}</li>
+                <li>{loginName}</li>
             </ul>
 
         </div>
+        
         
        
         

@@ -9,6 +9,8 @@ import { useState } from "react";
 
 const Menu = ()=>{
 
+    console.log("Menu Render");
+
     const params = useParams();
     
     const {resId}=params;

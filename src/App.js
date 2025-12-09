@@ -10,7 +10,13 @@ import Menu from "./components/Menu";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 import DummyImage from "./components/DummyImage";
 
+import { useState, useEffect } from "react";
+import LoginUser from "./utils/UserContext";
+
 const Contact = lazy(()=> import("./components/Contact"));
+
+
+
 
 
 
@@ -18,11 +24,39 @@ const Contact = lazy(()=> import("./components/Contact"));
 
 const AppLevel = ()=>{
 
+    const [userName, setUserName]=useState();
+
+    useEffect(()=>{
+        const data={
+            name:"Elon Musk"
+        };
+
+        setUserName(data.name);
+
+
+
+    },[]);
+
+   
+
+ 
+
+
 
     return (
         <div>
             <Header/>
-            <Outlet/>
+            <LoginUser value={{loginName:userName, setUserName}}>
+                 <Outlet/>
+
+            </LoginUser>
+            
+           
+               
+           
+
+           
+            
             <Footer/>
             
            

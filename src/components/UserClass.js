@@ -1,4 +1,5 @@
 import React from "react";
+import loginUser from "../utils/UserContext";
 
 
 class UserClass extends React.Component{
@@ -60,7 +61,13 @@ class UserClass extends React.Component{
                 <img src={avatar_url}></img>
                 <h2>Name: {name},</h2>
                 <h2>Location: {location}</h2>
+               <loginUser.Consumer>
+                {
+                    (val) =><h3>{val.loginName}</h3>
+                }
+               </loginUser.Consumer>
                 <h3>Count: {count}</h3>
+                
                 <button onClick={
                     ()=>{
                        
