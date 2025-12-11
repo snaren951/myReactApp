@@ -9,9 +9,13 @@ import Error from "./components/Error";
 import Menu from "./components/Menu";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 import DummyImage from "./components/DummyImage";
+import MyCart from "./components/MyCart";
 
 import { useState, useEffect } from "react";
 import LoginUser from "./utils/UserContext";
+
+import store from "./utils/store";
+import { Provider } from "react-redux";
 
 const Contact = lazy(()=> import("./components/Contact"));
 
@@ -45,21 +49,17 @@ const AppLevel = ()=>{
 
     return (
         <div>
-            <Header/>
-            <LoginUser value={{loginName:userName, setUserName}}>
-                 <Outlet/>
+            <Provider store={store}>
+                <Header/>
+                <LoginUser value={{loginName:userName, setUserName}}>
+                     <Outlet/>
 
-            </LoginUser>
-            
-           
-               
-           
-
+                 </LoginUser>
            
             
-            <Footer/>
+                 <Footer/>
             
-           
+           </Provider>
             
         </div>
 
@@ -97,6 +97,10 @@ const appRouter = createBrowserRouter([
          path:"/restaurant/:resId",
         element:<Menu/>
     },
+     {
+         path:"/mycart",
+        element:<MyCart/>
+    }
 
 
         ],

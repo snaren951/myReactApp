@@ -5,7 +5,16 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import loginUser from "../utils/UserContext";
 import { useContext } from "react";
 
+import { useSelector } from "react-redux";
+
 const Header=()=>{
+
+
+    const cartItems= useSelector((state)=>state.cart.items);
+    const count = cartItems.length;
+    console.log(cartItems);
+   
+    
     const [loginBtn,setLoginBtn]=useState("Login");
 
     const onlineState= useOnlineStatus();
@@ -30,7 +39,7 @@ const Header=()=>{
         <ul className="flex">
             <li className="px-4 font-semibold"> Status: {onlineState? "✅":"🔴"}</li>
             <li className="px-4 font-semibold"><Link to="/">Home</Link></li>
-            <li className="px-4 font-semibold">Cart</li>
+            
             <li className="px-4 font-semibold"><Link to="/about">About</Link></li>
             <li className="px-4 font-semibold"><Link to="/contact">Contact Us</Link></li>
             <li className="px-4 font-semibold"><button className="login-btn" onClick={
@@ -41,6 +50,7 @@ const Header=()=>{
                 }
             }>{loginBtn}</button></li>
             <li className="px-4 font-semibold">UserName: {loginName}</li>
+            <li className="px-4 font-semibold"><Link to="/mycart"> 🛍️ {count}</Link></li>
         </ul>
     </div>
 )};
