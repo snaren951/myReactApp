@@ -50,7 +50,7 @@ const Header=()=>{
                 }
             }>{loginBtn}</button></li>
             <li className="px-4 font-semibold">UserName: {loginName}</li>
-            <li className="px-4 font-semibold"><Link to="/mycart"> 🛍️ {count}</Link></li>
+            <li className="px-4 font-semibold"><Link to="/mycart"> 🛍️ {count>0 && count}</Link></li>
         </ul>
     </div>
 )};

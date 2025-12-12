@@ -3,13 +3,13 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cart";
 
 
-const ItemList = ({data})=> {
+const ItemList = ({items, showAddButton})=> {
 
     const dispatch=useDispatch();
 
 
     const addItemHandler = (item)=>{
-        dispatch(addItem(item.card.info.name));
+        dispatch(addItem(item));
         console.log(item);
         //action:{
         // paylaod:"Biryani"}
@@ -17,13 +17,14 @@ const ItemList = ({data})=> {
 
     }
    
-    const {itemCards}=data?.card?.card
+   
+   // const {itemCards}=data?.card?.card
 
 
     return (
         <div >
             {
-                itemCards.map((item)=>(
+                items.map((item)=>(
                     <div className="text-left mb-6 border-b-2 last:border-none border-gray-200 pl-3" key={item.card.info.id}>
 
 
@@ -32,7 +33,7 @@ const ItemList = ({data})=> {
                         
                         <h3 className="text-gray-600 font-semibold font-serif">{"Rs " + item.card.info.price/100}</h3>
                         <h2 className="font-serif text-gray-500">{item.card.info.description}</h2>
-                        <button className="text-white font-bold bg-red-300 px-2 rounded-xl justify-self-end hover:cursor-pointer my-2" onClick={()=>addItemHandler(item)}>Add+</button>
+                        {showAddButton && <button className="text-white font-bold bg-red-300 px-2 rounded-xl justify-self-end hover:cursor-pointer my-2" onClick={()=>addItemHandler(item)}>Add+</button>}
                         
                     
                     </div>

@@ -27,7 +27,7 @@ const ItemCategory = ({categories, expand,handleToggle,index})=>{
                             <div className="text-gray-700 text-3xl">{expand ?"⊖":"⊕"}</div>
                             
                         </div>
-                        { expand  && <ItemList data={categories}/>}
+                        { expand  && <ItemList items={categories.card.card.itemCards} showAddButton={true}/>}
 
                     </div>
         </div>
