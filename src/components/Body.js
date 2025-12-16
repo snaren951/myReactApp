@@ -82,8 +82,6 @@ const Body = () =>{
 
                 
                
-                
-               
                  const filteredList = newStores.filter(function(store){
                     return store.card.card.info.name.toLowerCase().includes(searchText.toLowerCase());
                  });
