@@ -10,7 +10,7 @@ const RestaurantCard= function(props){
       console.log("Restaurant card Render");
 
     const {resDetails}=props;
-  // console.log(resDetails);
+  console.log(resDetails);
     const {name,avgRating,costForTwoMessage}=resDetails.card.card.info;
 
 const {loginName} = useContext(loginUser);

@@ -4,5 +4,6 @@ dist
 .parcel-cache
 sample.css
 sampleflex.html
+/coverage
 
 
